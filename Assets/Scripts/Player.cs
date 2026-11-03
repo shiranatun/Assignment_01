@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -59,7 +60,7 @@ public class Player : MonoBehaviour
                 if (totalScore >= targetScore)
                 {
                     Debug.Log("you won");
-                    Time.timeScale = 0f;
+                    EditorApplication.isPlaying = false;
                 }
                 else if (numOfCoins % 5 == 0)
                 {
@@ -70,7 +71,7 @@ public class Player : MonoBehaviour
         else if (other.CompareTag(EnemyTag))
         {
             Debug.Log("you lose");
-            Time.timeScale = 0f;
+            EditorApplication.isPlaying = false;
         }
     }
 }
