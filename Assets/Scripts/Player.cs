@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
                     Debug.Log("you won");
                     EditorApplication.isPlaying = false;
                 }
-                else if (numOfCoins % 5 == 0)
+                else if (numOfCoins % coinSpawner.coinsPerBatch == 0)
                 {
                     coinSpawner.SpawnCoins();
                 }
